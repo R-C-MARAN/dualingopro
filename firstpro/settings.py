@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'firstpro.wsgi.application'
 
 DATABASES = {
     'default': {
+        'default': dj_database_url.config(default=os.environ.get("postgresql://dualingodatabase_user:zmQeEOrA3X4cS9etdqPq6VWFMMmHEkut@dpg-d0s32g49c44c73cnqon0-a/dualingodatabase")),
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
