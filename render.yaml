@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: dualingopro
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn firstpro.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: firstpro.settings
+      - key: DATABASE_URL
+        value: postgresql://dualingodatabase_user:zmQeEOrA3X4cS9etdqPq6VWFMMmHEkut@dpg-d0s32g49c44c73cnqon0-a/dualingodatabase
