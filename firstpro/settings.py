@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'firstpro.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'default': dj_database_url.config(default=os.environ.get("postgresql://dualingodatabase_user:zmQeEOrA3X4cS9etdqPq6VWFMMmHEkut@dpg-d0s32g49c44c73cnqon0-a/dualingodatabase")),
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')  # or your actual URL string here
+    )
 }
 
 
